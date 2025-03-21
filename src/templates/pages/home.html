@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="row g-4">
+        {% include 'components/sidebar-nav.html' %}
+
+        <!-- Main Content -->
+        <div class="col-12 col-lg-9">
+            <article class="bg-white p-4 rounded shadow-sm">
+                <header class="mb-4">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+                            {% if page.parent %}
+                            <li class="breadcrumb-item"><a href="{{ page.parent.url }}">{{ page.parent.title }}</a></li>
+                            {% endif %}
+                            <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+                        </ol>
+                    </nav>
+                    <h1 class="display-5 fw-bold border-bottom pb-3">{{ page.title }}</h1>
+                    {% if page.description %}
+                    <p class="lead text-muted">{{ page.description }}</p>
+                    {% endif %}
+                </header>
+
+                <div class="markdown-content">
+                    {{ content | safe }}
+                </div>
+
+                <!-- Previous/Next Navigation -->
+                {% if navigation and navigation.prev and navigation.next %}
+                <nav class="d-flex justify-content-between mt-5 pt-4 border-top" aria-label="Navigation des pages">
+                    {% if navigation.prev %}
+                    <a href="{{ navigation.prev.url|default('#') }}" class="btn btn-outline-primary">
+                        <i class="bi bi-arrow-left"></i> {{ navigation.prev.title|default('Page précédente') }}
+                    </a>
+                    {% else %}
+                    <div></div>
+                    {% endif %}
+
+                    {% if navigation.next %}
+                    <a href="{{ navigation.next.url|default('#') }}" class="btn btn-outline-primary">
+                        {{ navigation.next.title|default('Page suivante') }} <i class="bi bi-arrow-right"></i>
+                    </a>
+                    {% else %}
+                    <div></div>
+                    {% endif %}
+                </nav>
+                {% endif %}
+            </article>
+        </div>
+    </div>
+</div>
+{% endblock %}

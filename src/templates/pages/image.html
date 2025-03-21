@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/gallery">Galerie</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ image.title }}</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <div class="col-md-8">
+            <img src="{{ image.path }}" class="img-fluid" alt="{{ image.alt }}">
+        </div>
+        <div class="col-md-4">
+            <h1>{{ image.title }}</h1>
+            {% if image.description %}
+            <p class="lead">{{ image.description }}</p>
+            {% endif %}
+            {% if image.metadata %}
+            <div class="metadata mt-4">
+                <h2>Métadonnées</h2>
+                <dl>
+                    {% for key, value in image.metadata.items() %}
+                    <dt>{{ key }}</dt>
+                    <dd>{{ value }}</dd>
+                    {% endfor %}
+                </dl>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

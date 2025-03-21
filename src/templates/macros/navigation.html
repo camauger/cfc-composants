@@ -1,0 +1,63 @@
+{% macro nav_link(url, title, page, is_unilingual=true) %}
+  {% set current_url = page.url if is_unilingual else page.url | replace('/' + page.lang + '/', '/') %}
+  {% set link_url = '/' + url if url else '/' %}
+  <li class="nav-item">
+    <a href="{{ link_url }}" class="nav-link{% if current_url == link_url %} active fw-bold{% endif %}"{% if current_url == link_url %} aria-current="page"{% endif %}>
+      {{ title }}
+    </a>
+  </li>
+{% endmacro %}
+
+{% macro sidebar_nav(navigation, page) %}
+<div class="col-12 col-lg-3">
+    <nav class="sticky-lg-top pt-3" style="top: 2rem;">
+        <div class="list-group">
+            <a href="/" class="list-group-item list-group-item-action{% if page.url == '/' %} active{% endif %}">
+                {{ t.home }}
+            </a>
+
+            {# Composants de base #}
+            <div class="list-group-item list-group-item-secondary">Composants de base</div>
+            <a href="/composants/accordeon" class="list-group-item list-group-item-action{% if '/composants/accordeon' in page.url %} active{% endif %}">
+                Accordéon
+            </a>
+            <a href="/composants/alertes" class="list-group-item list-group-item-action{% if '/composants/alertes' in page.url %} active{% endif %}">
+                Alertes
+            </a>
+            <a href="/composants/boutons" class="list-group-item list-group-item-action{% if '/composants/boutons' in page.url %} active{% endif %}">
+                Boutons
+            </a>
+            <a href="/composants/cartes" class="list-group-item list-group-item-action{% if '/composants/cartes' in page.url %} active{% endif %}">
+                Cartes
+            </a>
+
+            {# Navigation et Tabs #}
+            <div class="list-group-item list-group-item-secondary">Navigation</div>
+            <a href="/composants/navbar" class="list-group-item list-group-item-action{% if '/composants/navbar' in page.url %} active{% endif %}">
+                Barre de navigation
+            </a>
+            <a href="/composants/tabs" class="list-group-item list-group-item-action{% if '/composants/tabs' in page.url %} active{% endif %}">
+                Onglets
+            </a>
+
+            {# Formulaires #}
+            <div class="list-group-item list-group-item-secondary">Formulaires</div>
+            <a href="/composants/input" class="list-group-item list-group-item-action{% if '/composants/input' in page.url %} active{% endif %}">
+                Champs de saisie
+            </a>
+            <a href="/composants/select" class="list-group-item list-group-item-action{% if '/composants/select' in page.url %} active{% endif %}">
+                Listes déroulantes
+            </a>
+
+            {# Mise en page #}
+            <div class="list-group-item list-group-item-secondary">Mise en page</div>
+            <a href="/composants/grille" class="list-group-item list-group-item-action{% if '/composants/grille' in page.url %} active{% endif %}">
+                Grille
+            </a>
+            <a href="/composants/conteneurs" class="list-group-item list-group-item-action{% if '/composants/conteneurs' in page.url %} active{% endif %}">
+                Conteneurs
+            </a>
+        </div>
+    </nav>
+</div>
+{% endmacro %}

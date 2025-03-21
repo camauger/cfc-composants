@@ -1,0 +1,16 @@
+{% from 'macros/navigation.html' import nav_link %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="{{ t.menu }}">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavigation">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        {{ nav_link('', t.home, page, is_unilingual) }}
+        {{ nav_link('composants', t.composants, page, is_unilingual) }}
+      </ul>
+    </div>
+  </div>
+</nav>

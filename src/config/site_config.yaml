@@ -1,0 +1,14 @@
+title: 'CFC - Composants Bootstrap 5 pour Moodle'
+tagline: ''
+base_url: ''
+blog_url: '/blog'
+glossary_url: '/glossaire'
+author: 'Christian Amauger'
+
+languages: [ 'fr']
+default_lang: 'fr'
+language_names:
+  fr: 'Français'
+year: 2025
+
+
