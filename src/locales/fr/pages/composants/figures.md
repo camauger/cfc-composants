@@ -32,7 +32,7 @@ template: pages/composant.html
             <div class="card-body">
               <div class="component-preview">
                 <figure class="figure">
-                  <img src="https://via.placeholder.com/400x300" class="figure-img img-fluid rounded" alt="Image d'exemple">
+                  <img src="https://placehold.co/400x300" class="figure-img img-fluid rounded" alt="Image d'exemple">
                   <figcaption class="figure-caption">Une légende pour l'image.</figcaption>
                 </figure>
               </div>
@@ -49,15 +49,15 @@ template: pages/composant.html
               <p>Les légendes peuvent être alignées de différentes manières.</p>
               <div class="component-preview">
                 <figure class="figure">
-                  <img src="https://via.placeholder.com/400x300" class="figure-img img-fluid rounded" alt="Image avec légende alignée à gauche">
+                  <img src="https://placehold.co/400x300" class="figure-img img-fluid rounded" alt="Image avec légende alignée à gauche">
                   <figcaption class="figure-caption text-start">Légende alignée à gauche.</figcaption>
                 </figure>
                 <figure class="figure">
-                  <img src="https://via.placeholder.com/400x300" class="figure-img img-fluid rounded" alt="Image avec légende centrée">
+                  <img src="https://placehold.co/400x300" class="figure-img img-fluid rounded" alt="Image avec légende centrée">
                   <figcaption class="figure-caption text-center">Légende centrée.</figcaption>
                 </figure>
                 <figure class="figure">
-                  <img src="https://via.placeholder.com/400x300" class="figure-img img-fluid rounded" alt="Image avec légende alignée à droite">
+                  <img src="https://placehold.co/400x300" class="figure-img img-fluid rounded" alt="Image avec légende alignée à droite">
                   <figcaption class="figure-caption text-end">Légende alignée à droite.</figcaption>
                 </figure>
               </div>
@@ -70,11 +70,11 @@ template: pages/composant.html
               <p>Les figures peuvent avoir des styles personnalisés.</p>
               <div class="component-preview">
                 <figure class="figure">
-                  <img src="https://via.placeholder.com/400x300" class="figure-img img-fluid rounded shadow" alt="Image avec ombre">
+                  <img src="https://placehold.co/400x300" class="figure-img img-fluid rounded shadow" alt="Image avec ombre">
                   <figcaption class="figure-caption">Figure avec ombre.</figcaption>
                 </figure>
                 <figure class="figure">
-                  <img src="https://via.placeholder.com/400x300" class="figure-img img-fluid rounded-pill" alt="Image avec coins arrondis">
+                  <img src="https://placehold.co/400x300" class="figure-img img-fluid rounded-pill" alt="Image avec coins arrondis">
                   <figcaption class="figure-caption">Figure avec coins arrondis.</figcaption>
                 </figure>
               </div>
@@ -87,7 +87,7 @@ template: pages/composant.html
               <p>Les figures peuvent contenir du contenu riche dans leur légende.</p>
               <div class="component-preview">
                 <figure class="figure">
-                  <img src="https://via.placeholder.com/400x300" class="figure-img img-fluid rounded" alt="Image avec contenu riche">
+                  <img src="https://placehold.co/400x300" class="figure-img img-fluid rounded" alt="Image avec contenu riche">
                   <figcaption class="figure-caption">
                     <h5>Titre de la figure</h5>
                     <p>Description détaillée de la figure avec du texte supplémentaire.</p>

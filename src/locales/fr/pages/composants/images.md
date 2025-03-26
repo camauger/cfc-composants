@@ -31,7 +31,7 @@ template: pages/composant.html
           <div class="card mb-4">
             <div class="card-body">
               <div class="component-preview">
-                <img src="https://via.placeholder.com/300x200" class="img-fluid" alt="Image d'exemple">
+                <img src="https://placehold.co/300x200" class="img-fluid" alt="Image d'exemple">
               </div>
             </div>
           </div>
@@ -45,7 +45,7 @@ template: pages/composant.html
               <h3 class="h5">Images responsives</h3>
               <p>Les images peuvent être rendues responsives pour s'adapter à leur conteneur.</p>
               <div class="component-preview">
-                <img src="https://via.placeholder.com/800x400" class="img-fluid" alt="Image responsive">
+                <img src="https://placehold.co/800x400" class="img-fluid" alt="Image responsive">
               </div>
             </div>
           </div>
@@ -55,8 +55,8 @@ template: pages/composant.html
               <h3 class="h5">Images avec coins arrondis</h3>
               <p>Les images peuvent avoir des coins arrondis.</p>
               <div class="component-preview">
-                <img src="https://via.placeholder.com/200x200" class="rounded" alt="Image avec coins arrondis">
-                <img src="https://via.placeholder.com/200x200" class="rounded-circle ms-3" alt="Image circulaire">
+                <img src="https://placehold.co/200x200" class="rounded" alt="Image avec coins arrondis">
+                <img src="https://placehold.co/200x200" class="rounded-circle ms-3" alt="Image circulaire">
               </div>
             </div>
           </div>
@@ -66,8 +66,8 @@ template: pages/composant.html
               <h3 class="h5">Images avec ombres</h3>
               <p>Les images peuvent avoir des ombres pour plus de profondeur.</p>
               <div class="component-preview">
-                <img src="https://via.placeholder.com/200x200" class="shadow" alt="Image avec ombre">
-                <img src="https://via.placeholder.com/200x200" class="shadow-sm ms-3" alt="Image avec ombre légère">
+                <img src="https://placehold.co/200x200" class="shadow" alt="Image avec ombre">
+                <img src="https://placehold.co/200x200" class="shadow-sm ms-3" alt="Image avec ombre légère">
               </div>
             </div>
           </div>
@@ -78,7 +78,7 @@ template: pages/composant.html
               <p>Les images peuvent inclure des légendes.</p>
               <div class="component-preview">
                 <figure class="figure">
-                  <img src="https://via.placeholder.com/400x300" class="figure-img img-fluid rounded" alt="Image avec légende">
+                  <img src="https://placehold.co/400x300" class="figure-img img-fluid rounded" alt="Image avec légende">
                   <figcaption class="figure-caption">Une légende pour l'image.</figcaption>
                 </figure>
               </div>

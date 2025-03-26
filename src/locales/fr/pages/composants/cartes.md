@@ -57,7 +57,7 @@ template: pages/composant.html
               <p>Les cartes peuvent inclure des images.</p>
               <div class="component-preview">
                 <div class="card">
-                  <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Image d'exemple">
+                  <img src="https://placehold.co/400x200" class="card-img-top" alt="Image d'exemple">
                   <div class="card-body">
                     <h5 class="card-title">Titre de la carte</h5>
                     <p class="card-text">Description de l'image.</p>
