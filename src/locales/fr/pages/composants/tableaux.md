@@ -1,310 +1,252 @@
 ---
 title: Tableaux
-description: Documentation sur l'utilisation des tableaux Bootstrap dans Moodle, avec des exemples et des bonnes pratiques.
+description: Documentation du composant Tableaux de Bootstrap 5 pour Moodle
 template: pages/composant.html
 ---
 
-Les tableaux sont largement utilisés dans Moodle pour afficher des données structurées comme les listes de participants, les notes, les journaux d'activité, etc.
-
-## Tableau de base
-
-Le tableau de base inclut des bordures légères et un rembourrage pour les cellules.
-
-=== "Aperçu"
-    <div class="bd-example">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nom</th>
-            <th scope="col">Prénom</th>
-            <th scope="col">Note</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Dubois</td>
-            <td>Marie</td>
-            <td>85%</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Martin</td>
-            <td>Pierre</td>
-            <td>92%</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Bernard</td>
-            <td>Julie</td>
-            <td>78%</td>
-          </tr>
-        </tbody>
-      </table>
+<div class="container py-4">
+  <div class="row">
+    <div class="col-lg-3">
+      <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
+        <nav class="nav nav-pills flex-column">
+          <a class="nav-link" href="#description">Description</a>
+          <a class="nav-link" href="#exemple-base">Exemple de base</a>
+          <a class="nav-link" href="#styles">Styles</a>
+          <a class="nav-link" href="#utilisation-moodle">Utilisation dans Moodle</a>
+          <a class="nav-link" href="#accessibilite">Accessibilité</a>
+        </nav>
+      </nav>
     </div>
 
-=== "HTML"
-    ```html
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Nom</th>
-          <th scope="col">Prénom</th>
-          <th scope="col">Note</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Dubois</td>
-          <td>Marie</td>
-          <td>85%</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Martin</td>
-          <td>Pierre</td>
-          <td>92%</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Bernard</td>
-          <td>Julie</td>
-          <td>78%</td>
-        </tr>
-      </tbody>
-    </table>
-    ```
+    <div class="col-lg-9">
+      <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
+        <div id="description">
+          <h2>Description</h2>
+          <p class="lead">Les tableaux sont des composants essentiels pour présenter des données structurées. Bootstrap 5 offre plusieurs styles de tableaux pour différents contextes d'utilisation.</p>
+        </div>
 
-## Variantes de style
+        <div id="exemple-base" class="mt-5">
+          <h2>Exemple de base</h2>
+          <p>Un tableau simple avec des en-têtes et des données.</p>
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="component-preview">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Nom</th>
+                      <th scope="col">Prénom</th>
+                      <th scope="col">Email</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Dupont</td>
+                      <td>Jean</td>
+                      <td>jean.dupont@exemple.com</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Martin</td>
+                      <td>Marie</td>
+                      <td>marie.martin@exemple.com</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
 
-### Tableau avec rayures
+        <div id="styles" class="mt-5">
+          <h2>Styles</h2>
 
-Ajoutez `.table-striped` pour des rayures alternées.
+          <div class="card mb-4">
+            <div class="card-body">
+              <h3 class="h5">Tableaux avec bordures</h3>
+              <p>Les tableaux peuvent avoir des bordures pour une meilleure lisibilité.</p>
+              <div class="component-preview">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">En-tête 1</th>
+                      <th scope="col">En-tête 2</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Donnée 1</td>
+                      <td>Donnée 2</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Donnée 3</td>
+                      <td>Donnée 4</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
 
-=== "Aperçu"
-    <div class="bd-example">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Activité</th>
-            <th scope="col">Date</th>
-            <th scope="col">Statut</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Devoir 1</td>
-            <td>2024-01-15</td>
-            <td>Complété</td>
-          </tr>
-          <tr>
-            <td>Quiz 1</td>
-            <td>2024-01-20</td>
-            <td>En attente</td>
-          </tr>
-          <tr>
-            <td>Forum</td>
-            <td>2024-01-25</td>
-            <td>En cours</td>
-          </tr>
-        </tbody>
-      </table>
+          <div class="card mb-4">
+            <div class="card-body">
+              <h3 class="h5">Tableaux rayés</h3>
+              <p>Les tableaux peuvent avoir des lignes alternées pour une meilleure lisibilité.</p>
+              <div class="component-preview">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">En-tête 1</th>
+                      <th scope="col">En-tête 2</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Donnée 1</td>
+                      <td>Donnée 2</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Donnée 3</td>
+                      <td>Donnée 4</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>Donnée 5</td>
+                      <td>Donnée 6</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-body">
+              <h3 class="h5">Tableaux avec survol</h3>
+              <p>Les tableaux peuvent avoir un effet de survol sur les lignes.</p>
+              <div class="component-preview">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">En-tête 1</th>
+                      <th scope="col">En-tête 2</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Donnée 1</td>
+                      <td>Donnée 2</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Donnée 3</td>
+                      <td>Donnée 4</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-body">
+              <h3 class="h5">Tableaux responsifs</h3>
+              <p>Les tableaux peuvent être rendus responsifs pour s'adapter aux différentes tailles d'écran.</p>
+              <div class="component-preview">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">En-tête 1</th>
+                        <th scope="col">En-tête 2</th>
+                        <th scope="col">En-tête 3</th>
+                        <th scope="col">En-tête 4</th>
+                        <th scope="col">En-tête 5</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Donnée 1</td>
+                        <td>Donnée 2</td>
+                        <td>Donnée 3</td>
+                        <td>Donnée 4</td>
+                        <td>Donnée 5</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="utilisation-moodle" class="mt-5">
+          <h2>Utilisation dans Moodle</h2>
+          <p>Dans Moodle, les tableaux sont utilisés pour :</p>
+          <ul class="list-group mb-4">
+            <li class="list-group-item">Afficher les notes</li>
+            <li class="list-group-item">Présenter les participants</li>
+            <li class="list-group-item">Montrer les statistiques</li>
+            <li class="list-group-item">Afficher les données de progression</li>
+            <li class="list-group-item">Présenter les horaires</li>
+          </ul>
+
+          <div class="card mb-4">
+            <div class="card-body">
+              <h3 class="h5">Exemple d'intégration dans un template Moodle</h3>
+              <pre class="bg-light p-3 rounded"><code>{{#table}}
+    &lt;div class="{{#responsive}}table-responsive{{/responsive}}"&gt;
+        &lt;table class="table {{#bordered}}table-bordered{{/bordered}} {{#striped}}table-striped{{/striped}} {{#hover}}table-hover{{/hover}}"&gt;
+            {{#thead}}
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    {{#headers}}
+                    &lt;th scope="col"&gt;{{text}}&lt;/th&gt;
+                    {{/headers}}
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            {{/thead}}
+            {{#tbody}}
+            &lt;tbody&gt;
+                {{#rows}}
+                &lt;tr&gt;
+                    {{#cells}}
+                    &lt;{{#header}}th scope="row"{{/header}}{{^header}}td{{/header}}&gt;{{text}}&lt;/{{#header}}th{{/header}}{{^header}}td{{/header}}&gt;
+                    {{/cells}}
+                &lt;/tr&gt;
+                {{/rows}}
+            &lt;/tbody&gt;
+            {{/tbody}}
+        &lt;/table&gt;
+    &lt;/div&gt;
+{{/table}}</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div id="accessibilite" class="mt-5">
+          <h2>Accessibilité</h2>
+          <ul class="list-group mb-4">
+            <li class="list-group-item">Utilisez des en-têtes appropriés pour les colonnes</li>
+            <li class="list-group-item">Associez les cellules aux en-têtes correspondants</li>
+            <li class="list-group-item">Maintenez un contraste suffisant pour le texte</li>
+            <li class="list-group-item">Rendez les tableaux responsifs pour les petits écrans</li>
+            <li class="list-group-item">Fournissez un résumé pour les lecteurs d'écran</li>
+          </ul>
+        </div>
+      </div>
     </div>
-
-=== "HTML"
-    ```html
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">Activité</th>
-          <th scope="col">Date</th>
-          <th scope="col">Statut</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Devoir 1</td>
-          <td>2024-01-15</td>
-          <td>Complété</td>
-        </tr>
-        <tr>
-          <td>Quiz 1</td>
-          <td>2024-01-20</td>
-          <td>En attente</td>
-        </tr>
-        <tr>
-          <td>Forum</td>
-          <td>2024-01-25</td>
-          <td>En cours</td>
-        </tr>
-      </tbody>
-    </table>
-    ```
-
-### Tableau avec bordures
-
-Utilisez `.table-bordered` pour des bordures sur tous les côtés.
-
-=== "Aperçu"
-    <div class="bd-example">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th scope="col">Module</th>
-            <th scope="col">Description</th>
-            <th scope="col">Durée</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Introduction</td>
-            <td>Présentation du cours</td>
-            <td>1h</td>
-          </tr>
-          <tr>
-            <td>Chapitre 1</td>
-            <td>Concepts de base</td>
-            <td>2h</td>
-          </tr>
-          <tr>
-            <td>Chapitre 2</td>
-            <td>Applications pratiques</td>
-            <td>3h</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-### Tableau avec survol
-
-Ajoutez `.table-hover` pour un effet de survol sur les lignes.
-
-=== "Aperçu"
-    <div class="bd-example">
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">Étudiant</th>
-            <th scope="col">Participation</th>
-            <th scope="col">Progression</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Alice Dupont</td>
-            <td>Active</td>
-            <td>75%</td>
-          </tr>
-          <tr>
-            <td>Bob Martin</td>
-            <td>Modérée</td>
-            <td>45%</td>
-          </tr>
-          <tr>
-            <td>Claire Bernard</td>
-            <td>Très active</td>
-            <td>90%</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-## Utilisation dans Moodle
-
-Dans Moodle, les tableaux sont souvent utilisés avec des templates Mustache :
-
-```html
-{{#table}}
-<table class="table {{#striped}}table-striped{{/striped}} {{#hover}}table-hover{{/hover}}">
-  <thead>
-    <tr>
-      {{#headers}}
-      <th scope="col">{{.}}</th>
-      {{/headers}}
-    </tr>
-  </thead>
-  <tbody>
-    {{#rows}}
-    <tr>
-      {{#cells}}
-      <td>{{{.}}}</td>
-      {{/cells}}
-    </tr>
-    {{/rows}}
-  </tbody>
-  {{#hasfooter}}
-  <tfoot>
-    <tr>
-      {{#footers}}
-      <td>{{.}}</td>
-      {{/footers}}
-    </tr>
-  </tfoot>
-  {{/hasfooter}}
-</table>
-{{/table}}
-```
-
-## Tableaux responsifs
-
-Enveloppez les tableaux dans `.table-responsive{-sm|-md|-lg|-xl|-xxl}` pour les rendre défilables horizontalement.
-
-```html
-<div class="table-responsive">
-  <table class="table">
-    ...
-  </table>
+  </div>
 </div>
-```
-
-## Accessibilité
-
-Pour des tableaux accessibles :
-
-- Utilisez des en-têtes de tableau appropriés (`<th>`)
-- Ajoutez `scope="col"` pour les en-têtes de colonnes
-- Ajoutez `scope="row"` pour les en-têtes de lignes
-- Incluez des légendes descriptives avec `<caption>`
-- Évitez les tableaux complexes avec des cellules fusionnées
-
-## Personnalisation
-
-### Variables CSS
-
-```css
---bs-table-color: var(--bs-body-color);
---bs-table-bg: var(--bs-body-bg);
---bs-table-border-color: var(--bs-border-color);
---bs-table-accent-bg: transparent;
---bs-table-striped-color: var(--bs-body-color);
---bs-table-striped-bg: rgba(0, 0, 0, 0.05);
---bs-table-active-color: var(--bs-body-color);
---bs-table-active-bg: rgba(0, 0, 0, 0.1);
---bs-table-hover-color: var(--bs-body-color);
---bs-table-hover-bg: rgba(0, 0, 0, 0.075);
-```
-
-### Variables Sass
-
-```scss
-$table-cell-padding-y:        .5rem;
-$table-cell-padding-x:        .5rem;
-$table-cell-padding-y-sm:     .25rem;
-$table-cell-padding-x-sm:     .25rem;
-$table-cell-vertical-align:   top;
-$table-color:                 var(--#{$prefix}body-color);
-$table-bg:                    var(--#{$prefix}body-bg);
-$table-accent-bg:             transparent;
-$table-striped-color:         $table-color;
-$table-striped-bg-factor:     .05;
-$table-striped-bg:            rgba($black, $table-striped-bg-factor);
-$table-active-color:          $table-color;
-$table-active-bg-factor:      .1;
-$table-active-bg:             rgba($black, $table-active-bg-factor);
-$table-hover-color:           $table-color;
-$table-hover-bg-factor:       .075;
-$table-hover-bg:              rgba($black, $table-hover-bg-factor);
-```

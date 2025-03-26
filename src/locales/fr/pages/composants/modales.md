@@ -1,196 +1,284 @@
 ---
 title: Modales
-description: Documentation sur l'utilisation des fenêtres modales Bootstrap dans Moodle, avec des exemples et des bonnes pratiques.
+description: Documentation du composant Modales de Bootstrap 5 pour Moodle
 template: pages/composant.html
 ---
 
-Les modales sont des boîtes de dialogue qui s'affichent par-dessus le contenu principal pour fournir des informations critiques ou demander une décision à l'utilisateur. Dans Moodle, elles sont particulièrement utiles pour afficher des confirmations, des formulaires courts ou des informations détaillées sans quitter la page courante.
+<div class="container py-4">
+  <div class="row">
+    <div class="col-lg-3">
+      <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
+        <nav class="nav nav-pills flex-column">
+          <a class="nav-link" href="#description">Description</a>
+          <a class="nav-link" href="#exemple-base">Exemple de base</a>
+          <a class="nav-link" href="#styles">Styles</a>
+          <a class="nav-link" href="#utilisation-moodle">Utilisation dans Moodle</a>
+          <a class="nav-link" href="#accessibilite">Accessibilité</a>
+        </nav>
+      </nav>
+    </div>
 
-## Fonctionnement
+    <div class="col-lg-9">
+      <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
+        <div id="description">
+          <h2>Description</h2>
+          <p class="lead">Les modales sont des fenêtres contextuelles qui apparaissent au centre de l'écran avec un fond semi-transparent. Elles sont idéales pour afficher des formulaires, des confirmations ou des contenus importants qui nécessitent l'attention de l'utilisateur.</p>
+        </div>
 
-Les modales Bootstrap sont construites avec HTML, CSS et JavaScript. Quelques points importants à noter :
+        <div id="exemple-base" class="mt-5">
+          <h2>Exemple de base</h2>
+          <p>Une modale simple avec un titre, un contenu et des boutons d'action.</p>
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="component-preview">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Ouvrir la modale
+                </button>
 
-- Les modales sont positionnées au-dessus de tout autre élément de la page
-- Le défilement de la page est désactivé lorsqu'une modale est ouverte
-- Un seul modal peut être affiché à la fois
-- Un clic sur l'arrière-plan ferme automatiquement la modale
-- Les modales utilisent `position: fixed`
-
-!!! warning "Accessibilité"
-    L'effet d'animation de ce composant dépend de la requête média `prefers-reduced-motion`. Pour une meilleure accessibilité, assurez-vous d'inclure des alternatives pour les utilisateurs naviguant au clavier.
-
-## Exemple de base
-
-=== "Aperçu"
-    <div class="bd-example">
-      <div class="modal" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Titre de la modale</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
-            </div>
-            <div class="modal-body">
-              <p>Contenu de la modale...</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-              <button type="button" class="btn btn-primary">Enregistrer</button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Titre de la modale</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                      </div>
+                      <div class="modal-body">
+                        Contenu de la modale
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                        <button type="button" class="btn btn-primary">Enregistrer</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-=== "HTML"
-    ```html
-    <!-- Bouton pour ouvrir la modale -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Ouvrir la modale
-    </button>
+        <div id="styles" class="mt-5">
+          <h2>Styles</h2>
 
-    <!-- La modale -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Titre de la modale</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+          <div class="card mb-4">
+            <div class="card-body">
+              <h3 class="h5">Modales de différentes tailles</h3>
+              <p>Les modales peuvent avoir différentes tailles selon le contenu.</p>
+              <div class="component-preview">
+                <div class="d-flex gap-3 justify-content-center">
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#smallModal">
+                    Petite
+                  </button>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#defaultModal">
+                    Par défaut
+                  </button>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#largeModal">
+                    Grande
+                  </button>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#extraLargeModal">
+                    Extra grande
+                  </button>
+                </div>
+
+                <div class="modal fade" id="smallModal" tabindex="-1" aria-labelledby="smallModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="smallModalLabel">Petite modale</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                      </div>
+                      <div class="modal-body">
+                        Contenu de la petite modale
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="modal fade" id="defaultModal" tabindex="-1" aria-labelledby="defaultModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="defaultModalLabel">Modale par défaut</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                      </div>
+                      <div class="modal-body">
+                        Contenu de la modale par défaut
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="modal fade" id="largeModal" tabindex="-1" aria-labelledby="largeModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="largeModalLabel">Grande modale</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                      </div>
+                      <div class="modal-body">
+                        Contenu de la grande modale
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="modal fade" id="extraLargeModal" tabindex="-1" aria-labelledby="extraLargeModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="extraLargeModalLabel">Extra grande modale</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                      </div>
+                      <div class="modal-body">
+                        Contenu de l'extra grande modale
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="modal-body">
-            <p>Contenu de la modale...</p>
+
+          <div class="card mb-4">
+            <div class="card-body">
+              <h3 class="h5">Modales avec scrolling</h3>
+              <p>Les modales peuvent avoir un défilement indépendant.</p>
+              <div class="component-preview">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#scrollableModal">
+                  Ouvrir la modale avec défilement
+                </button>
+
+                <div class="modal fade" id="scrollableModal" tabindex="-1" aria-labelledby="scrollableModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="scrollableModalLabel">Modale avec défilement</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                      </div>
+                      <div class="modal-body">
+                        <p>Contenu avec défilement...</p>
+                        <p>Ligne après ligne...</p>
+                        <p>Pour tester le défilement...</p>
+                        <p>Ajoutez beaucoup de contenu...</p>
+                        <p>Jusqu'à ce que la barre de défilement apparaisse...</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-            <button type="button" class="btn btn-primary">Enregistrer</button>
+
+          <div class="card mb-4">
+            <div class="card-body">
+              <h3 class="h5">Modales avec formulaires</h3>
+              <p>Les modales peuvent contenir des formulaires pour la saisie de données.</p>
+              <div class="component-preview">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
+                  Ouvrir le formulaire
+                </button>
+
+                <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="formModalLabel">Formulaire dans une modale</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email">
+                          </div>
+                          <div class="mb-3">
+                            <label for="password" class="form-label">Mot de passe</label>
+                            <input type="password" class="form-control" id="password">
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                        <button type="button" class="btn btn-primary">Connexion</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
+        <div id="utilisation-moodle" class="mt-5">
+          <h2>Utilisation dans Moodle</h2>
+          <p>Dans Moodle, les modales sont utilisées pour :</p>
+          <ul class="list-group mb-4">
+            <li class="list-group-item">Afficher des formulaires de connexion</li>
+            <li class="list-group-item">Confirmer des actions importantes</li>
+            <li class="list-group-item">Montrer des détails sur les activités</li>
+            <li class="list-group-item">Afficher des messages d'erreur</li>
+            <li class="list-group-item">Fournir des options de configuration</li>
+          </ul>
+
+          <div class="card mb-4">
+            <div class="card-body">
+              <h3 class="h5">Exemple d'intégration dans un template Moodle</h3>
+              <pre class="bg-light p-3 rounded"><code>{{#has_modal}}
+    &lt;button type="button"
+            class="btn {{#style}}btn-{{style}}{{/style}}"
+            data-bs-toggle="modal"
+            data-bs-target="#{{id}}"&gt;
+        {{button_text}}
+    &lt;/button&gt;
+
+    &lt;div class="modal fade"
+         id="{{id}}"
+         tabindex="-1"
+         aria-labelledby="{{id}}Label"
+         aria-hidden="true"&gt;
+        &lt;div class="modal-dialog {{#size}}modal-{{size}}{{/size}} {{#scrollable}}modal-dialog-scrollable{{/scrollable}}"&gt;
+            &lt;div class="modal-content"&gt;
+                &lt;div class="modal-header"&gt;
+                    &lt;h5 class="modal-title" id="{{id}}Label"&gt;{{title}}&lt;/h5&gt;
+                    &lt;button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Fermer"&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class="modal-body"&gt;
+                    {{content}}
+                &lt;/div&gt;
+                {{#has_footer}}
+                &lt;div class="modal-footer"&gt;
+                    {{#footer_buttons}}
+                    &lt;button type="button"
+                            class="btn btn-{{style}}"
+                            {{#dismiss}}data-bs-dismiss="modal"{{/dismiss}}&gt;
+                        {{text}}
+                    &lt;/button&gt;
+                    {{/footer_buttons}}
+                &lt;/div&gt;
+                {{/has_footer}}
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+{{/has_modal}}</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div id="accessibilite" class="mt-5">
+          <h2>Accessibilité</h2>
+          <ul class="list-group mb-4">
+            <li class="list-group-item">Utilisez des attributs ARIA appropriés</li>
+            <li class="list-group-item">Gérez correctement le focus lors de l'ouverture/fermeture</li>
+            <li class="list-group-item">Maintenez un contraste suffisant pour le texte</li>
+            <li class="list-group-item">Fournissez des alternatives pour les utilisateurs qui ne peuvent pas utiliser la souris</li>
+            <li class="list-group-item">Assurez-vous que le contenu est accessible au clavier</li>
+          </ul>
+        </div>
       </div>
-    </div>
-    ```
-
-## Utilisation dans Moodle
-
-Dans Moodle, les modales sont souvent utilisées pour :
-
-- Afficher des confirmations avant une action importante
-- Présenter des informations détaillées sur un élément
-- Afficher des formulaires courts
-- Montrer des messages d'aide ou des instructions
-
-### Exemple avec Mustache
-
-```html
-{{#modal}}
-<div class="modal fade" id="modal-{{uniqid}}" tabindex="-1" role="dialog" aria-labelledby="modal-title-{{uniqid}}">
-  <div class="modal-dialog {{#isLarge}}modal-lg{{/isLarge}}" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modal-title-{{uniqid}}">{{title}}</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{#str}}close{{/str}}"></button>
-      </div>
-      <div class="modal-body">
-        {{{body}}}
-      </div>
-      {{#hasFooter}}
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{#str}}cancel{{/str}}</button>
-        <button type="button" class="btn btn-primary" data-action="save">{{#str}}save{{/str}}</button>
-      </div>
-      {{/hasFooter}}
     </div>
   </div>
 </div>
-{{/modal}}
-```
-
-### Exemple avec JavaScript
-
-```javascript
-// Initialisation de la modale
-var myModal = new bootstrap.Modal(document.getElementById('myModal'), {
-  keyboard: false
-});
-
-// Événements
-document.getElementById('myModal').addEventListener('shown.bs.modal', function () {
-  document.getElementById('myInput').focus();
-});
-
-// Ouvrir la modale
-myModal.show();
-
-// Fermer la modale
-myModal.hide();
-```
-
-## Tailles de modale
-
-Bootstrap propose différentes tailles de modales :
-
-=== "HTML"
-    ```html
-    <!-- Petite modale -->
-    <div class="modal-dialog modal-sm">...</div>
-
-    <!-- Modale par défaut -->
-    <div class="modal-dialog">...</div>
-
-    <!-- Grande modale -->
-    <div class="modal-dialog modal-lg">...</div>
-
-    <!-- Très grande modale -->
-    <div class="modal-dialog modal-xl">...</div>
-
-    <!-- Modale plein écran -->
-    <div class="modal-dialog modal-fullscreen">...</div>
-    ```
-
-## Personnalisation
-
-### Variables CSS
-
-```css
---bs-modal-padding: 1rem;
---bs-modal-margin: 0.5rem;
---bs-modal-color: ;
---bs-modal-bg: #fff;
---bs-modal-border-color: rgba(0, 0, 0, 0.2);
---bs-modal-border-width: 1px;
---bs-modal-border-radius: 0.5rem;
---bs-modal-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
---bs-modal-inner-border-radius: calc(0.5rem - 1px);
---bs-modal-header-padding-x: 1rem;
---bs-modal-header-padding-y: 1rem;
---bs-modal-header-padding: 1rem;
---bs-modal-header-border-color: var(--bs-border-color);
---bs-modal-header-border-width: 1px;
---bs-modal-title-line-height: 1.5;
---bs-modal-footer-gap: 0.5rem;
---bs-modal-footer-border-color: var(--bs-border-color);
---bs-modal-footer-border-width: 1px;
-```
-
-### Variables Sass
-
-```scss
-$modal-inner-padding:               $spacer;
-$modal-footer-margin-between:       .5rem;
-$modal-dialog-margin:               .5rem;
-$modal-dialog-margin-y-sm-up:       1.75rem;
-$modal-title-line-height:           $line-height-base;
-$modal-content-color:               null;
-$modal-content-bg:                  $white;
-$modal-content-border-color:        rgba($black, .2);
-$modal-content-border-width:        $border-width;
-$modal-content-border-radius:       $border-radius-lg;
-$modal-content-inner-border-radius: subtract($modal-content-border-radius, $modal-content-border-width);
-$modal-content-box-shadow-xs:       $box-shadow-sm;
-$modal-content-box-shadow-sm-up:    $box-shadow;
-$modal-backdrop-bg:                 $black;
-$modal-backdrop-opacity:            .5;
-$modal-sm:                          300px;
-$modal-md:                          500px;
-$modal-lg:                          800px;
-$modal-xl:                          1140px;
-```

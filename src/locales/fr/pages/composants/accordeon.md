@@ -4,14 +4,30 @@ description: Guide d'utilisation du composant accordéon de Bootstrap 5 dans Moo
 template: pages/composant.html
 ---
 
-
 L'accordéon est un composant interactif qui permet d'afficher du contenu de manière expansible/réductible. Il est particulièrement utile pour organiser du contenu dense en sections distinctes dans Moodle.
 
-## Utilisation de base
+## Table des matières
+
+- [Présentation générale](#présentation-générale)
+  - [Utilisation de base](#utilisation-de-base)
+  - [Utilisation dans Moodle](#utilisation-dans-moodle)
+  - [Exemples d'utilisation dans Moodle](#exemples-dutilisation-dans-moodle)
+  - [Options de personnalisation](#options-de-personnalisation)
+  - [Accessibilité](#accessibilité)
+  - [Bonnes pratiques](#bonnes-pratiques)
+  - [Quand utiliser un accordéon](#quand-utiliser-un-accordéon)
+  - [Problèmes courants](#problèmes-courants)
+- [Pour les développeurs](#pour-les-développeurs)
+  - [Intégration dans Moodle](#intégration-dans-moodle)
+  - [Considérations d'accessibilité](#considérations-daccessibilité)
+
+<h2 id="présentation-générale">Présentation générale</h2>
+
+<h3 id="utilisation-de-base">Utilisation de base</h3>
 
 L'accordéon de base utilise les classes `accordion` et `accordion-item` pour créer une liste d'éléments expansibles.
 
-<div class="example-preview">
+<div class="example-preview mb-4">
   <div class="accordion" id="accordionExample">
     <div class="accordion-item">
       <h2 class="accordion-header">
@@ -40,109 +56,31 @@ L'accordéon de base utilise les classes `accordion` et `accordion-item` pour cr
   </div>
 </div>
 
-## Utilisation dans Moodle
+<h3 id="utilisation-dans-moodle">Utilisation dans Moodle</h3>
 
 Dans Moodle, l'accordéon est particulièrement utile pour :
 
-1. **Organisation des sections de cours**
-   - Regrouper les ressources par thème
-   - Masquer/afficher les activités optionnelles
-   - Présenter des informations complémentaires
+**Organisation des sections de cours**
 
-2. **Présentation des consignes**
-   - Structurer les étapes d'une activité
-   - Fournir des détails supplémentaires à la demande
-   - Organiser les critères d'évaluation
+- Regrouper les ressources par thème
+- Masquer/afficher les activités optionnelles
+- Présenter des informations complémentaires
 
-3. **FAQ et support**
-   - Répondre aux questions fréquentes
-   - Fournir de l'aide contextuelle
-   - Présenter des tutoriels étape par étape
+**Présentation des consignes**
 
-## Options de personnalisation
+- Structurer les étapes d'une activité
+- Fournir des détails supplémentaires à la demande
+- Organiser les critères d'évaluation
 
-### Flush
+**FAQ et support**
 
-L'option `accordion-flush` supprime les bordures externes de l'accordéon.
+- Répondre aux questions fréquentes
+- Fournir de l'aide contextuelle
+- Présenter des tutoriels étape par étape
 
-<div class="accordion accordion-flush" id="accordionFlushExample">
-  <!-- ... contenu de l'accordéon ... -->
-</div>
+<h3 id="exemples-dutilisation-dans-moodle">Exemples d'utilisation dans Moodle</h3>
 
-### Always open
-
-Par défaut, un seul élément peut être ouvert à la fois. Pour permettre l'ouverture simultanée de plusieurs éléments, retirez l'attribut `data-bs-parent`.
-
-<div class="accordion" id="accordionNoParent">
-  <div class="accordion-item">
-    <!-- Notez l'absence de data-bs-parent -->
-    <div id="collapseOne" class="accordion-collapse collapse show">
-      <!-- ... contenu ... -->
-    </div>
-  </div>
-</div>
-
-## Accessibilité
-
-Pour garantir l'accessibilité de vos accordéons :
-
-1. **Structure HTML**
-   - Utilisez des balises `<h2>` pour les en-têtes
-   - Maintenez une hiérarchie logique des titres
-   - Préservez l'ordre sémantique du contenu
-
-2. **Attributs ARIA**
-   - `aria-expanded` : indique l'état d'expansion
-   - `aria-controls` : associe le bouton à son contenu
-   - `aria-labelledby` : lie le contenu à son en-tête
-
-3. **Navigation au clavier**
-   - Tab : navigation entre les boutons
-   - Enter/Space : ouvre/ferme la section
-   - Les boutons sont naturellement focusables
-
-## Bonnes pratiques
-
-1. **Organisation du contenu**
-   - Limitez le nombre de sections (maximum 5-7)
-   - Utilisez des titres descriptifs et concis
-   - Évitez de masquer des informations critiques
-
-2. **Performance**
-   - Évitez les accordéons imbriqués
-   - Ne surchargez pas les sections de contenu
-   - Utilisez des images optimisées
-
-3. **Expérience utilisateur**
-   - Indiquez clairement le contenu de chaque section
-   - Maintenez une cohérence dans la structure
-   - Préservez l'état des sections lors de la navigation
-
-## Personnalisation CSS
-
-Vous pouvez personnaliser l'apparence de l'accordéon avec les variables CSS de Bootstrap :
-
-```scss
-// Variables personnalisables
-$accordion-padding-y: 1rem;
-$accordion-padding-x: 1.25rem;
-$accordion-color: $body-color;
-$accordion-bg: $body-bg;
-$accordion-border-width: $border-width;
-$accordion-border-color: var(--#{$prefix}border-color);
-$accordion-border-radius: $border-radius;
-$accordion-inner-border-radius: subtract($accordion-border-radius, $accordion-border-width);
-
-// États et interactions
-$accordion-button-active-bg: tint-color($component-active-bg, 90%);
-$accordion-button-active-color: shade-color($primary, 10%);
-$accordion-button-focus-border-color: $input-focus-border-color;
-$accordion-button-focus-box-shadow: $btn-focus-box-shadow;
-```
-
-## Exemples d'utilisation dans Moodle
-
-### Sections de cours
+#### Sections de cours
 
 <div class="accordion" id="courseContent">
   <div class="accordion-item">
@@ -163,7 +101,7 @@ $accordion-button-focus-box-shadow: $btn-focus-box-shadow;
   </div>
 </div>
 
-### FAQ dynamique
+#### FAQ dynamique
 
 <div class="accordion accordion-flush" id="faqAccordion">
   <div class="accordion-item">
@@ -185,43 +123,197 @@ $accordion-button-focus-box-shadow: $btn-focus-box-shadow;
   </div>
 </div>
 
-## Dépannage
+<h3 id="options-de-personnalisation">Options de personnalisation</h3>
 
-### Problèmes courants
+<h3 class="mt-5 mb-4">Flush</h3>
 
-1. **L'accordéon ne s'ouvre pas**
-   - Vérifiez que le JavaScript de Bootstrap est chargé
-   - Confirmez que les IDs sont uniques
-   - Assurez-vous que les attributs data-bs-* sont corrects
+L'option `accordion-flush` supprime les bordures externes de l'accordéon pour une apparence plus épurée.
 
-2. **Conflits de style**
-   - Inspectez les styles avec les outils de développement
-   - Vérifiez la spécificité CSS
-   - Utilisez !important avec parcimonie
+<div class="example-preview bg-light p-4 border rounded mb-4">
+  <div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flushCollapseOne" aria-expanded="false" aria-controls="flushCollapseOne">
+          Élément d'accordéon flush #1
+        </button>
+      </h2>
+      <div id="flushCollapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          Cet accordéon utilise la classe <code>accordion-flush</code> qui supprime les bordures externes pour une apparence plus minimaliste.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flushCollapseTwo" aria-expanded="false" aria-controls="flushCollapseTwo">
+          Élément d'accordéon flush #2
+        </button>
+      </h2>
+      <div id="flushCollapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          Remarquez l'absence de bordure externe autour de l'accordéon complet.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-3. **Problèmes d'accessibilité**
-   - Testez la navigation au clavier
-   - Vérifiez les contrastes de couleur
-   - Validez les attributs ARIA
+<pre class="language-html bg-light p-4 border rounded mb-4"><code>&lt;div class="accordion accordion-flush" id="accordionFlushExample"&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button
+        class="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flushCollapseOne"
+        aria-expanded="false"
+        aria-controls="flushCollapseOne"
+      &gt;
+        Élément d'accordéon flush
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div
+      id="flushCollapseOne"
+      class="accordion-collapse collapse"
+      data-bs-parent="#accordionFlushExample"
+    &gt;
+      &lt;div class="accordion-body"&gt;Contenu de l'accordéon&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
-## Bonnes pratiques
+<h3 class="mt-5 mb-4">Always open</h3>
 
-### Pour les développeurs
+Par défaut, un seul élément peut être ouvert à la fois. Pour permettre l'ouverture simultanée de plusieurs éléments, retirez l'attribut `data-bs-parent`.
 
-1. **Accessibilité** :
-   - Utilisez des en-têtes (`<h2>`, `<h3>`, etc.) appropriés
-   - Assurez-vous que les boutons ont un texte descriptif
-   - Maintenez une hiérarchie logique du contenu
-   - Utilisez les attributs ARIA appropriés (`aria-expanded`, `aria-controls`)
+<div class="example-preview bg-light p-4 border rounded mb-4">
+  <div class="accordion" id="accordionAlwaysOpen">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#alwaysOpenOne" aria-expanded="true" aria-controls="alwaysOpenOne">
+          Premier élément (peut rester ouvert)
+        </button>
+      </h2>
+      <div id="alwaysOpenOne" class="accordion-collapse collapse show">
+        <div class="accordion-body">
+          <strong>Cet élément peut rester ouvert</strong> même lorsque d'autres éléments sont ouverts, car l'attribut <code>data-bs-parent</code> a été supprimé.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#alwaysOpenTwo" aria-expanded="false" aria-controls="alwaysOpenTwo">
+          Deuxième élément (peut rester ouvert)
+        </button>
+      </h2>
+      <div id="alwaysOpenTwo" class="accordion-collapse collapse">
+        <div class="accordion-body">
+          Vous pouvez ouvrir cet élément sans fermer l'autre.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-2. **Performance** :
-   - Évitez de surcharger l'accordéon avec trop de contenu
-   - Utilisez des images optimisées dans le contenu
-   - Préchargez le contenu important
+<pre class="language-html"><code>&lt;div class="accordion" id="accordionExample"&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button
+        class="accordion-button"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapseOne"
+        aria-expanded="true"
+        aria-controls="collapseOne"
+      &gt;
+        Élément 1
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;!-- Notez l'absence de data-bs-parent --&gt;
+    &lt;div id="collapseOne" class="accordion-collapse collapse show"&gt;
+      &lt;div class="accordion-body"&gt;Contenu de l'élément&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
-### Pour les non-développeurs
+<h3 id="accessibilité">Accessibilité</h3>
 
-#### Quand utiliser un accordéon
+Pour garantir l'accessibilité de vos accordéons, suivez ces recommandations essentielles :
+
+<div class="card border-info mb-4">
+  <div class="card-header bg-info bg-opacity-10">
+    <h3 class="h5 mb-0">1. Structure HTML</h3>
+  </div>
+  <div class="card-body">
+    <ul class="mb-0">
+      <li class="mb-2">Utilisez des balises <code>&lt;h2&gt;</code> pour les en-têtes (ou respectez la hiérarchie existante)</li>
+      <li class="mb-2">Maintenez une hiérarchie logique des titres dans tout le document</li>
+      <li>Préservez l'ordre sémantique du contenu pour une lecture cohérente</li>
+    </ul>
+  </div>
+</div>
+
+<div class="card border-info mb-4">
+  <div class="card-header bg-info bg-opacity-10">
+    <h3 class="h5 mb-0">2. Attributs ARIA</h3>
+  </div>
+  <div class="card-body">
+    <ul class="mb-0">
+      <li class="mb-2"><code>aria-expanded</code> : indique clairement l'état d'expansion actuel (true/false)</li>
+      <li class="mb-2"><code>aria-controls</code> : associe le bouton à la section de contenu qu'il contrôle</li>
+      <li><code>aria-labelledby</code> : lie le contenu de l'accordéon à son en-tête pour les lecteurs d'écran</li>
+    </ul>
+  </div>
+</div>
+
+<pre class="language-html"><code>&lt;!-- Exemple d'implémentation correcte des attributs d'accessibilité --&gt;
+&lt;div class="accordion" id="accessibleAccordion"&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header" id="headingOne"&gt;
+      &lt;button
+        class="accordion-button"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapseOne"
+        aria-expanded="true"
+        aria-controls="collapseOne"
+      &gt;
+        Section accessible
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div
+      id="collapseOne"
+      class="accordion-collapse collapse show"
+      aria-labelledby="headingOne"
+    &gt;
+      &lt;div class="accordion-body"&gt;
+        Contenu accessible à tous les utilisateurs
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<h3 id="bonnes-pratiques">Bonnes pratiques</h3>
+
+**Organisation du contenu**
+
+- Limitez le nombre de sections (maximum 5-7)
+- Utilisez des titres descriptifs et concis
+- Évitez de masquer des informations critiques
+
+**Performance**
+
+- Évitez les accordéons imbriqués
+- Ne surchargez pas les sections de contenu
+- Utilisez des images optimisées
+
+**Expérience utilisateur**
+
+- Indiquez clairement le contenu de chaque section
+- Maintenez une cohérence dans la structure
+- Préservez l'état des sections lors de la navigation
+
+<h3 id="quand-utiliser-un-accordéon">Quand utiliser un accordéon</h3>
 
 L'accordéon est un excellent choix dans les situations suivantes :
 
@@ -241,11 +333,13 @@ En revanche, évitez d'utiliser un accordéon quand :
 #### Organisation efficace du contenu
 
 1. **Hiérarchie logique** :
+
    - Organisez les sections de l'accordéon dans un ordre logique
    - Placez les informations les plus importantes ou les plus fréquemment consultées en haut
    - Regroupez les contenus thématiquement cohérents
 
 2. **Équilibre du contenu** :
+
    - Répartissez le contenu de manière équilibrée entre les sections
    - Évitez une section très longue suivie de sections très courtes
    - Idéalement, chaque section devrait pouvoir être lue en 1-2 minutes maximum
@@ -259,11 +353,13 @@ En revanche, évitez d'utiliser un accordéon quand :
 #### Cas d'utilisation dans Moodle
 
 1. **Page de cours** :
+
    - Organisez les sujets/semaines du cours en accordéons pour une navigation facile
    - Utilisez un accordéon pour regrouper les ressources complémentaires
    - Présentez les consignes d'évaluation en sections distinctes
 
 2. **Documentation pédagogique** :
+
    - Structurez les guides d'utilisation par thématiques
    - Présenter les étapes d'un processus (par exemple, soumettre un devoir)
    - Regrouper différents scénarios d'utilisation
@@ -276,11 +372,13 @@ En revanche, évitez d'utiliser un accordéon quand :
 #### Conseils ergonomiques
 
 1. **Visibilité des contrôles** :
+
    - Assurez-vous que les boutons d'ouverture/fermeture sont facilement identifiables
    - Utilisez des icônes reconnaissables (flèche vers le bas/haut) en plus du texte
    - Maintenez une taille suffisante pour faciliter l'interaction sur appareils tactiles
 
 2. **Retour visuel** :
+
    - Assurez-vous que l'état ouvert/fermé est clairement visible
    - Utilisez des animations sobres pour signaler les transitions
    - Envisagez d'utiliser des couleurs différentes pour les sections actives
@@ -316,7 +414,6 @@ En revanche, évitez d'utiliser un accordéon quand :
   <!-- Autres questions... -->
 </div>
 
-
 **Exemple 2 : Plan de cours structuré**
 
 <div class="accordion" id="courseModules">
@@ -341,10 +438,10 @@ En revanche, évitez d'utiliser un accordéon quand :
         </ul>
       </div>
     </div>
+
   </div>
   <!-- Autres modules... -->
 </div>
-
 
 #### Complémentarité avec d'autres composants
 
@@ -355,36 +452,67 @@ Les accordéons fonctionnent bien en combinaison avec :
 - **Cartes** : Intégrez des accordéons dans des cartes pour une organisation visuelle plus claire
 - **Badges** : Ajoutez des badges aux titres d'accordéon pour indiquer des statuts (nouveau, obligatoire, etc.)
 
-## Intégration dans Moodle
+<h3 id="problèmes-courants">Problèmes courants</h3>
+
+**L'accordéon ne s'ouvre pas**
+
+- Vérifiez que le JavaScript de Bootstrap est chargé
+- Confirmez que les IDs sont uniques
+- Assurez-vous que les attributs data-bs-\* sont corrects
+
+**Conflits de style**
+
+- Inspectez les styles avec les outils de développement
+- Vérifiez la spécificité CSS
+- Utilisez !important avec parcimonie
+
+**Problèmes d'accessibilité**
+
+- Testez la navigation au clavier
+- Vérifiez les contrastes de couleur
+- Validez les attributs ARIA
+
+<h2 id="pour-les-développeurs">Pour les développeurs</h2>
+
+1. **Accessibilité** :
+
+   - Utilisez des en-têtes (`<h2>`, `<h3>`, etc.) appropriés
+   - Assurez-vous que les boutons ont un texte descriptif
+   - Maintenez une hiérarchie logique du contenu
+   - Utilisez les attributs ARIA appropriés (`aria-expanded`, `aria-controls`)
+
+2. **Performance** :
+   - Évitez de surcharger l'accordéon avec trop de contenu
+   - Utilisez des images optimisées dans le contenu
+   - Préchargez le contenu important
+
+<h3 id="intégration-dans-moodle">Intégration dans Moodle</h3>
 
 Pour utiliser l'accordéon dans Moodle, assurez-vous que le JavaScript de Bootstrap est correctement chargé. Exemple d'utilisation dans un template Moodle :
 
-```php
-<?php
+<pre class="language-php"><code>&lt;?php
 // Template Moodle
 $context = context_system::instance();
-?>
+?&gt;
 
-<div class="accordion" id="moodleAccordion">
+&lt;div class="accordion" id="moodleAccordion"&gt;
     {{#sections}}
-    <div class="accordion-item">
-        <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{id}}">
+    &lt;div class="accordion-item"&gt;
+        &lt;h2 class="accordion-header"&gt;
+            &lt;button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{id}}"&gt;
                 {{{title}}}
-            </button>
-        </h2>
-        <div id="collapse{{id}}" class="accordion-collapse collapse" data-bs-parent="#moodleAccordion">
-            <div class="accordion-body">
+            &lt;/button&gt;
+        &lt;/h2&gt;
+        &lt;div id="collapse{{id}}" class="accordion-collapse collapse" data-bs-parent="#moodleAccordion"&gt;
+            &lt;div class="accordion-body"&gt;
                 {{{content}}}
-            </div>
-        </div>
-    </div>
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
     {{/sections}}
-</div>
-```
+&lt;/div&gt;</code></pre>
 
-### Exemple avec plusieurs sections
-
+#### Exemple avec plusieurs sections
 
 <div class="accordion" id="courseSections">
   <div class="accordion-item">
@@ -417,7 +545,7 @@ $context = context_system::instance();
   </div>
 </div>
 
-## Considérations d'accessibilité
+<h3 id="considérations-daccessibilité">Considérations d'accessibilité</h3>
 
 - Utilisez des attributs ARIA appropriés :
 

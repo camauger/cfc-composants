@@ -4,150 +4,146 @@ description: Documentation du composant Badges de Bootstrap 5 pour Moodle
 template: pages/composant.html
 ---
 
-
-Les badges sont de petits composants de comptage et d'étiquetage qui peuvent être utilisés pour ajouter des informations supplémentaires à n'importe quel contenu.
-
-## Exemples de base
-
-Les badges s'adaptent automatiquement à la taille de leur parent immédiat en utilisant une taille de police relative et des unités `em`.
-
-<div class="preview-tabs">
-    <div class="preview-tabs-headers">
-        <button class="preview-tab-header active">Aperçu</button>
-        <button class="preview-tab-header">Code</button>
+<div class="container py-4">
+  <div class="row">
+    <div class="col-lg-3">
+      <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
+        <nav class="nav nav-pills flex-column">
+          <a class="nav-link" href="#description">Description</a>
+          <a class="nav-link" href="#exemple-base">Exemple de base</a>
+          <a class="nav-link" href="#styles">Styles</a>
+          <a class="nav-link" href="#utilisation-moodle">Utilisation dans Moodle</a>
+          <a class="nav-link" href="#accessibilite">Accessibilité</a>
+        </nav>
+      </nav>
     </div>
-    <div class="preview-tab-content">
-        <div class="component-preview">
-            <h1>Titre exemple <span class="badge bg-secondary">Nouveau</span></h1>
-            <h2>Titre exemple <span class="badge bg-secondary">Nouveau</span></h2>
-            <h3>Titre exemple <span class="badge bg-secondary">Nouveau</span></h3>
-            <h4>Titre exemple <span class="badge bg-secondary">Nouveau</span></h4>
-            <h5>Titre exemple <span class="badge bg-secondary">Nouveau</span></h5>
-            <h6>Titre exemple <span class="badge bg-secondary">Nouveau</span></h6>
+
+    <div class="col-lg-9">
+      <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
+        <div id="description">
+          <h2>Description</h2>
+          <p class="lead">Les badges sont des composants visuels qui permettent d'afficher de courtes informations, comme des notifications, des statuts ou des compteurs. Ils sont idéaux pour attirer l'attention sur des éléments importants.</p>
         </div>
-    </div>
-    <div class="preview-tab-content">
-        ```html
-        <h1>Titre exemple <span class="badge bg-secondary">Nouveau</span></h1>
-        <h2>Titre exemple <span class="badge bg-secondary">Nouveau</span></h2>
-        <h3>Titre exemple <span class="badge bg-secondary">Nouveau</span></h3>
-        <h4>Titre exemple <span class="badge bg-secondary">Nouveau</span></h4>
-        <h5>Titre exemple <span class="badge bg-secondary">Nouveau</span></h5>
-        <h6>Titre exemple <span class="badge bg-secondary">Nouveau</span></h6>
-        ```
-    </div>
-</div>
 
-## Couleurs de fond
-
-Utilisez les classes utilitaires de couleur de fond pour modifier l'apparence des badges.
-
-<div class="preview-tabs">
-    <div class="preview-tabs-headers">
-        <button class="preview-tab-header active">Aperçu</button>
-        <button class="preview-tab-header">Code</button>
-    </div>
-    <div class="preview-tab-content">
-        <div class="component-preview">
-            <span class="badge bg-primary">Primary</span>
-            <span class="badge bg-secondary">Secondary</span>
-            <span class="badge bg-success">Success</span>
-            <span class="badge bg-danger">Danger</span>
-            <span class="badge bg-warning text-dark">Warning</span>
-            <span class="badge bg-info text-dark">Info</span>
-            <span class="badge bg-light text-dark">Light</span>
-            <span class="badge bg-dark">Dark</span>
+        <div id="exemple-base" class="mt-5">
+          <h2>Exemple de base</h2>
+          <p>Un badge simple avec un texte.</p>
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="component-preview">
+                <span class="badge bg-primary">Nouveau</span>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    <div class="preview-tab-content">
-        ```html
-        <span class="badge bg-primary">Primary</span>
-        <span class="badge bg-secondary">Secondary</span>
-        <span class="badge bg-success">Success</span>
-        <span class="badge bg-danger">Danger</span>
-        <span class="badge bg-warning text-dark">Warning</span>
-        <span class="badge bg-info text-dark">Info</span>
-        <span class="badge bg-light text-dark">Light</span>
-        <span class="badge bg-dark">Dark</span>
-        ```
-    </div>
-</div>
 
-## Badges arrondis
+        <div id="styles" class="mt-5">
+          <h2>Styles</h2>
 
-Ajoutez la classe `.rounded-pill` pour rendre les badges plus arrondis.
+          <div class="card mb-4">
+            <div class="card-body">
+              <h3 class="h5">Badges avec couleurs</h3>
+              <p>Les badges peuvent avoir différentes couleurs selon leur contexte.</p>
+              <div class="component-preview">
+                <span class="badge bg-primary">Primaire</span>
+                <span class="badge bg-secondary">Secondaire</span>
+                <span class="badge bg-success">Succès</span>
+                <span class="badge bg-danger">Danger</span>
+                <span class="badge bg-warning">Avertissement</span>
+                <span class="badge bg-info">Info</span>
+                <span class="badge bg-light">Clair</span>
+                <span class="badge bg-dark">Sombre</span>
+              </div>
+            </div>
+          </div>
 
-<div class="preview-tabs">
-    <div class="preview-tabs-headers">
-        <button class="preview-tab-header active">Aperçu</button>
-        <button class="preview-tab-header">Code</button>
-    </div>
-    <div class="preview-tab-content">
-        <div class="component-preview">
-            <span class="badge rounded-pill bg-primary">Primary</span>
-            <span class="badge rounded-pill bg-secondary">Secondary</span>
-            <span class="badge rounded-pill bg-success">Success</span>
-            <span class="badge rounded-pill bg-danger">Danger</span>
+          <div class="card mb-4">
+            <div class="card-body">
+              <h3 class="h5">Badges avec coins arrondis</h3>
+              <p>Les badges peuvent avoir différents styles de coins arrondis.</p>
+              <div class="component-preview">
+                <span class="badge rounded-pill bg-primary">Pilule</span>
+                <span class="badge rounded-3 bg-primary">Arrondi</span>
+                <span class="badge rounded-0 bg-primary">Carré</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-body">
+              <h3 class="h5">Badges avec icônes</h3>
+              <p>Les badges peuvent inclure des icônes.</p>
+              <div class="component-preview">
+                <span class="badge bg-primary">
+                  <i class="bi bi-bell"></i> Notification
+                </span>
+                <span class="badge bg-success">
+                  <i class="bi bi-check-circle"></i> Complété
+                </span>
+                <span class="badge bg-warning">
+                  <i class="bi bi-exclamation-triangle"></i> Attention
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-body">
+              <h3 class="h5">Badges dans différents contextes</h3>
+              <p>Les badges peuvent être utilisés dans différents contextes.</p>
+              <div class="component-preview">
+                <button class="btn btn-primary">
+                  Messages
+                  <span class="badge bg-light text-dark">3</span>
+                </button>
+                <div class="mt-3">
+                  <h5>Titre avec badge <span class="badge bg-secondary">Beta</span></h5>
+                  <p>Texte avec badge <span class="badge bg-info">Important</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    <div class="preview-tab-content">
-        ```html
-        <span class="badge rounded-pill bg-primary">Primary</span>
-        <span class="badge rounded-pill bg-secondary">Secondary</span>
-        <span class="badge rounded-pill bg-success">Success</span>
-        <span class="badge rounded-pill bg-danger">Danger</span>
-        ```
-    </div>
-</div>
 
-## Badges avec boutons
+        <div id="utilisation-moodle" class="mt-5">
+          <h2>Utilisation dans Moodle</h2>
+          <p>Dans Moodle, les badges sont utilisés pour :</p>
+          <ul class="list-group mb-4">
+            <li class="list-group-item">Afficher des notifications</li>
+            <li class="list-group-item">Indiquer le statut des activités</li>
+            <li class="list-group-item">Montrer les niveaux de progression</li>
+            <li class="list-group-item">Signaler des mises à jour</li>
+            <li class="list-group-item">Identifier des fonctionnalités nouvelles</li>
+          </ul>
 
-Les badges peuvent être utilisés comme compteurs dans les boutons.
-
-<div class="preview-tabs">
-    <div class="preview-tabs-headers">
-        <button class="preview-tab-header active">Aperçu</button>
-        <button class="preview-tab-header">Code</button>
-    </div>
-    <div class="preview-tab-content">
-        <div class="component-preview">
-            <button type="button" class="btn btn-primary">
-                Notifications <span class="badge bg-secondary">4</span>
-            </button>
-            <button type="button" class="btn btn-success">
-                Messages <span class="badge bg-white text-success">2</span>
-            </button>
+          <div class="card mb-4">
+            <div class="card-body">
+              <h3 class="h5">Exemple d'intégration dans un template Moodle</h3>
+              <pre class="bg-light p-3 rounded"><code>{{#badge}}
+    &lt;span class="badge {{#rounded}}rounded-{{rounded}}{{/rounded}} {{#color}}bg-{{color}}{{/color}}"&gt;
+        {{#icon}}
+        &lt;i class="bi bi-{{icon}}"&gt;&lt;/i&gt;
+        {{/icon}}
+        {{text}}
+    &lt;/span&gt;
+{{/badge}}</code></pre>
+            </div>
+          </div>
         </div>
+
+        <div id="accessibilite" class="mt-5">
+          <h2>Accessibilité</h2>
+          <ul class="list-group mb-4">
+            <li class="list-group-item">Fournissez un texte descriptif pour les badges</li>
+            <li class="list-group-item">Maintenez un contraste suffisant</li>
+            <li class="list-group-item">Utilisez les badges de manière cohérente</li>
+            <li class="list-group-item">Assurez-vous que les badges sont accessibles au clavier</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="preview-tab-content">
-        ```html
-        <button type="button" class="btn btn-primary">
-            Notifications <span class="badge bg-secondary">4</span>
-        </button>
-        <button type="button" class="btn btn-success">
-            Messages <span class="badge bg-white text-success">2</span>
-        </button>
-        ```
-    </div>
+  </div>
 </div>
-
-## Utilisation dans Moodle
-
-Dans Moodle, les badges sont couramment utilisés pour :
-
-- Indiquer le nombre de messages non lus
-- Signaler de nouvelles activités ou ressources
-- Afficher le statut d'achèvement des activités
-- Montrer le nombre de participants dans un cours
-- Indiquer les notes ou évaluations
-
-### Exemple d'intégration dans un template Moodle
-
-```php
-{{#hascount}}
-    <span class="badge bg-{{type}}">{{count}}</span>
-{{/hascount}}
-```
 
 ## Variables CSS personnalisables
 
@@ -174,10 +170,3 @@ $badge-padding-y:                   .35em;
 $badge-padding-x:                   .65em;
 $badge-border-radius:               var(--#{$prefix}border-radius);
 ```
-
-## Accessibilité
-
-- Utilisez la couleur comme un indicateur visuel supplémentaire, pas comme seule méthode de communication
-- Assurez-vous que le contraste entre le texte et l'arrière-plan est suffisant
-- Pour les badges qui servent de compteurs, utilisez `aria-label` pour fournir un contexte plus détaillé
-- Évitez d'utiliser les badges pour des informations critiques sans autre moyen de communication
