@@ -1,4 +1,7 @@
 fr:
+  logo_alt: "TELUQ"
+  site_title: "CFC - Composants Bootstrap 5 pour Moodle"
+  site_description: "Découvrez des composants Bootstrap 5 pour Moodle et créez des interfaces modernes et personnalisées pour vos cours en ligne."
   about_title: À propos
   about: À propos
   all_rights_reserved: Tous droits réservés

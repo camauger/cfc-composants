@@ -1,4 +1,19 @@
 <header role="banner">
+  <div class="site-branding">
+    {% if site.logo %}
+    <a href="/" class="site-logo">
+      <img
+        src="{{ site.logo }}"
+        alt="{{ t.logo_alt }}"
+        width="150"
+        height="50"
+      />
+    </a>
+    {% endif %}
+    <div class="site-title">
+      <h1 class="text-center">{{ t.site_title }}</h1>
+    </div>
+  </div>
   <nav role="navigation" aria-label="{{ t.nav_label }}">
     <!-- Navigation principale -->
     {% include 'components/main-nav.html' %}
@@ -7,9 +22,6 @@
       class="header-actions"
       role="group"
       aria-label="{{ t.header_actions }}"
-    >
-
-
-    </div>
+    ></div>
   </nav>
 </header>

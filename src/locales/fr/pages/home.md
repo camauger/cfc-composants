@@ -5,6 +5,9 @@ template: pages/home.html
 ---
 
 Cette documentation présente les composants Bootstrap 5 et leur utilisation dans un contexte Moodle. Chaque composant est accompagné d'exemples pratiques et de recommandations spécifiques à l'environnement Moodle.
+La documentation est organisée en plusieurs sections, chacune correspondant à un type de composant ou à une fonctionnalité spécifique.
+
+> Note: La documenation est basée sur la version 5.3.0 de Bootstrap [https://getbootstrap.com/docs/5.3/getting-started/introduction/](https://getbootstrap.com/docs/5.3/getting-started/introduction/).
 
 ## Composants de base
 

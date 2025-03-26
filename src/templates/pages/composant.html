@@ -1,84 +1,61 @@
-{% extends "page.html" %}
-{% from 'macros/navigation.html' import sidebar_nav %}
-
+{% extends "page.html" %} {% from 'macros/navigation.html' import sidebar_nav %}
 {% block content %}
-<div class="container-fluid">
-    <div class="row g-4">
-        {# Sidebar navigation #}
-        {{ sidebar_nav(navigation, page) }}
+<div class="container py-4">
+  <div class="row g-4">
+    {# Sidebar navigation #} {{ sidebar_nav(navigation, page) }} {# Main content
+    #}
+    <div class="col-12 col-lg-9">
+      <article class="content">
+        {# Component title #}
+        <header class="mb-4">
+          <h1>{{ page.title }}</h1>
+          {% if page.description %}
+          <p class="lead">{{ page.description }}</p>
+          {% endif %}
+        </header>
 
-        {# Main content #}
-        <div class="col-12 col-lg-9">
-            <article class="content">
-                {# Component title #}
-                <header class="mb-4">
-                    <h1>{{ page.title }}</h1>
-                    {% if page.description %}
-                        <p class="lead">{{ page.description }}</p>
-                    {% endif %}
-                </header>
+        {# Component content from markdown #}
+        <div class="component-content mb-5">{{ content | safe }}</div>
 
-                {# Component content from markdown #}
-                <div class="component-content mb-5">
-                    {{ content | safe }}
-                </div>
-
-                {# Example section #}
-                {% if page.example %}
-                <section class="component-example mb-5">
-                    <h2>Exemple</h2>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="example-preview mb-3">
-                                {{ page.example | safe }}
-                            </div>
-                            {% if page.code %}
-                            <div class="example-code">
-                                <pre><code class="language-html">{{ page.code }}</code></pre>
-                            </div>
-                            {% endif %}
-                        </div>
-                    </div>
-                </section>
-                {% endif %}
-
-                {# Usage guidelines #}
-                {% if page.guidelines %}
-                <section class="component-guidelines mb-5">
-                    <h2>Lignes directrices d'utilisation</h2>
-                    <div class="card">
-                        <div class="card-body">
-                            {{ page.guidelines | safe }}
-                        </div>
-                    </div>
-                </section>
-                {% endif %}
-
-                {# Accessibility considerations #}
-                {% if page.accessibility %}
-                <section class="component-accessibility mb-5">
-                    <h2>Accessibilité</h2>
-                    <div class="card">
-                        <div class="card-body">
-                            {{ page.accessibility | safe }}
-                        </div>
-                    </div>
-                </section>
-                {% endif %}
-
-                {# Moodle specific notes #}
-                {% if page.moodle_notes %}
-                <section class="component-moodle-notes">
-                    <h2>Notes spécifiques à Moodle</h2>
-                    <div class="card">
-                        <div class="card-body">
-                            {{ page.moodle_notes | safe }}
-                        </div>
-                    </div>
-                </section>
-                {% endif %}
-            </article>
-        </div>
+        {# Example section #} {% if page.example %}
+        <section class="component-example mb-5">
+          <h2>Exemple</h2>
+          <div class="card">
+            <div class="card-body">
+              <div class="example-preview mb-3">{{ page.example | safe }}</div>
+              {% if page.code %}
+              <div class="example-code">
+                <pre><code class="language-html">{{ page.code }}</code></pre>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </section>
+        {% endif %} {# Usage guidelines #} {% if page.guidelines %}
+        <section class="component-guidelines mb-5">
+          <h2>Lignes directrices d'utilisation</h2>
+          <div class="card">
+            <div class="card-body">{{ page.guidelines | safe }}</div>
+          </div>
+        </section>
+        {% endif %} {# Accessibility considerations #} {% if page.accessibility
+        %}
+        <section class="component-accessibility mb-5">
+          <h2>Accessibilité</h2>
+          <div class="card">
+            <div class="card-body">{{ page.accessibility | safe }}</div>
+          </div>
+        </section>
+        {% endif %} {# Moodle specific notes #} {% if page.moodle_notes %}
+        <section class="component-moodle-notes">
+          <h2>Notes spécifiques à Moodle</h2>
+          <div class="card">
+            <div class="card-body">{{ page.moodle_notes | safe }}</div>
+          </div>
+        </section>
+        {% endif %}
+      </article>
     </div>
+  </div>
 </div>
 {% endblock %}
